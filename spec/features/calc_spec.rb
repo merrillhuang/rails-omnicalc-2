@@ -14,7 +14,7 @@ describe "/add" do
 
     heading = find("h1", :text => /Addition/i)
     expect(heading).to_not be_nil,
-      "Expected to find an <h1> with the text 'Addition', but didn't find one."
+                           "Expected to find an <h1> with the text 'Addition', but didn't find one."
   end
 end
 
@@ -23,7 +23,7 @@ describe "/add" do
     visit "/add"
 
     expect(page).to have_css("form", count: 1),
-      "Expected to find one form element on the page but found 0 or more than 1."
+                    "Expected to find one form element on the page but found 0 or more than 1."
   end
 end
 
@@ -32,7 +32,7 @@ describe "/add" do
     visit "/add"
 
     expect(page).to have_css("label", text: /Add\s+this/i),
-      "Expected to find a 'label' element with specified text, but didn't find one."
+                    "Expected to find a 'label' element with specified text, but didn't find one."
   end
 end
 
@@ -41,7 +41,7 @@ describe "/add" do
     visit "/add"
 
     expect(page).to have_css("label", text: /to\s+this/i),
-      "Expected to find a 'label' element with specified text, but didn't find one."
+                    "Expected to find a 'label' element with specified text, but didn't find one."
   end
 end
 
@@ -66,7 +66,7 @@ describe "/add" do
     visit "/add"
 
     expect(page).to have_css("form[action]"),
-      "Expected page to have a form element with an 'action' attribute but didn't find one."
+                    "Expected page to have a form element with an 'action' attribute but didn't find one."
   end
 end
 
@@ -78,14 +78,17 @@ describe "/add" do
 
     if for_attribute.nil?
       expect(for_attribute).to_not be_empty,
-        "Expected label's for attribute to be set to a non empty value, was '#{for_attribute}' instead."
+                                   "Expected label's for attribute to be set to a non empty value
+      , was '#{for_attribute}' instead."
     else
       all_inputs = all("input")
 
       all_input_ids = all_inputs.map { |input| input[:id] }
 
       expect(all_input_ids.count(for_attribute)).to eq(1),
-        "Expected label's for attribute(#{for_attribute}) to match only 1 of the ids of an <input> tag (#{all_input_ids}), but found #{all_input_ids.count(for_attribute)}."
+                                                    "Expected label's for attribute(#{for_attribute})
+      to match only 1 of the ids of an <input> tag (#{all_input_ids})
+      , but found #{all_input_ids.count(for_attribute)}."
     end
   end
 end
@@ -105,7 +108,8 @@ describe "/subtract" do
 
     heading = find("h1", :text => /Subtraction/i)
     expect(heading).to_not be_nil,
-      "Expected to find an <h1> with the text 'Subtraction', but didn't find one."
+                           "Expected to find an <h1> with the text 'Subtraction'
+    , but didn't find one."
   end
 end
 
@@ -114,7 +118,7 @@ describe "/subtract" do
     visit "/subtract"
 
     expect(page).to have_css("form", count: 1),
-      "Expected to find one form element on the page but found 0 or more than 1."
+                    "Expected to find one form element on the page but found 0 or more than 1."
   end
 end
 
@@ -123,7 +127,7 @@ describe "/subtract" do
     visit "/subtract"
 
     expect(page).to have_css("label", text: /Subtract\s+this/i),
-      "Expected to find a 'label' element with specified text, but didn't find one."
+                    "Expected to find a 'label' element with specified text, but didn't find one."
   end
 end
 
@@ -132,7 +136,7 @@ describe "/subtract" do
     visit "/subtract"
 
     expect(page).to have_css("label", text: /from\s+this/i),
-      "Expected to find a 'label' element with specified text, but didn't find one."
+                    "Expected to find a 'label' element with specified text, but didn't find one."
   end
 end
 
@@ -157,7 +161,7 @@ describe "/subtract" do
     visit "/subtract"
 
     expect(page).to have_css("form[action]"),
-      "Expected page to have a form element with an 'action' attribute but didn't find one."
+                    "Expected page to have a form element with an 'action' attribute but didn't find one."
   end
 end
 
@@ -169,14 +173,17 @@ describe "/subtract" do
 
     if for_attribute.nil?
       expect(for_attribute).to_not be_empty,
-        "Expected label's for attribute to be set to a non empty value, was '#{for_attribute}' instead."
+                                   "Expected label's for attribute to be set to a non empty value
+      , was '#{for_attribute}' instead."
     else
       all_inputs = all("input")
 
       all_input_ids = all_inputs.map { |input| input[:id] }
 
       expect(all_input_ids.count(for_attribute)).to eq(1),
-        "Expected label's for attribute(#{for_attribute}) to match only 1 of the ids of an <input> tag (#{all_input_ids}), but found #{all_input_ids.count(for_attribute)}."
+                                                    "Expected label's for attribute(#{for_attribute})
+      to match only 1 of the ids of an <input> tag (#{all_input_ids})
+      , but found #{all_input_ids.count(for_attribute)}."
     end
   end
 end
@@ -198,7 +205,8 @@ describe "/multiply" do
 
     heading = find("h1", :text => /Multiplication/i)
     expect(heading).to_not be_nil,
-      "Expected to find an <h1> with the text 'Multiplication', but didn't find one."
+                           "Expected to find an <h1> with the text 'Multiplication'
+    , but didn't find one."
   end
 end
 
@@ -207,7 +215,8 @@ describe "/multiply" do
     visit "/multiply"
 
     expect(page).to have_css("form", count: 1),
-      "Expected to find one form element on the page but found 0 or more than 1."
+                    "Expected to find one form element on the page
+     but found 0 or more than 1."
   end
 end
 
@@ -216,7 +225,8 @@ describe "/multiply" do
     visit "/multiply"
 
     expect(page).to have_css("label", text: /Multiply\s+this/i),
-      "Expected to find a 'label' element with specified text, but didn't find one."
+                    "Expected to find a 'label' element with specified text
+    , but didn't find one."
   end
 end
 
@@ -225,7 +235,8 @@ describe "/multiply" do
     visit "/multiply"
 
     expect(page).to have_css("label", text: /by\s+this/i),
-      "Expected to find a 'label' element with specified text, but didn't find one."
+                    "Expected to find a 'label' element with specified text
+    , but didn't find one."
   end
 end
 
@@ -250,7 +261,8 @@ describe "/multiply" do
     visit "/multiply"
 
     expect(page).to have_css("form[action]"),
-      "Expected page to have a form element with an 'action' attribute but didn't find one."
+                    "Expected page to have a form element with an
+     'action' attribute but didn't find one."
   end
 end
 
@@ -262,14 +274,17 @@ describe "/multiply" do
 
     if for_attribute.nil?
       expect(for_attribute).to_not be_empty,
-        "Expected label's for attribute to be set to a non empty value, was '#{for_attribute}' instead."
+                                   "Expected label's for attribute to be set to a non empty value
+      , was '#{for_attribute}' instead."
     else
       all_inputs = all("input")
 
       all_input_ids = all_inputs.map { |input| input[:id] }
 
       expect(all_input_ids.count(for_attribute)).to eq(1),
-        "Expected label's for attribute(#{for_attribute}) to match only 1 of the ids of an <input> tag (#{all_input_ids}), but found #{all_input_ids.count(for_attribute)}."
+                                                    "Expected label's for attribute(#{for_attribute})
+      to match only 1 of the ids of an <input> tag (#{all_input_ids}),
+      but found #{all_input_ids.count(for_attribute)}."
     end
   end
 end
@@ -291,7 +306,8 @@ describe "/divide" do
 
     heading = find("h1", :text => /Division/i)
     expect(heading).to_not be_nil,
-      "Expected to find an <h1> with the text 'Division', but didn't find one."
+                           "Expected to find an <h1> with the text 'Division'
+    , but didn't find one."
   end
 end
 
@@ -300,7 +316,8 @@ describe "/divide" do
     visit "/divide"
 
     expect(page).to have_css("form", count: 1),
-      "Expected to find one form element on the page but found 0 or more than 1."
+                    "Expected to find one form element on the
+    page but found 0 or more than 1."
   end
 end
 
@@ -309,7 +326,8 @@ describe "/divide" do
     visit "/divide"
 
     expect(page).to have_css("label", text: /Divide\s+this/i),
-      "Expected to find a 'label' element with specified text, but didn't find one."
+                    "Expected to find a 'label' element with specified text
+    , but didn't find one."
   end
 end
 
@@ -318,7 +336,8 @@ describe "/divide" do
     visit "/divide"
 
     expect(page).to have_css("label", text: /by\s+this/i),
-      "Expected to find a 'label' element with specified text, but didn't find one."
+                    "Expected to find a 'label' element with specified text
+    , but didn't find one."
   end
 end
 
@@ -343,7 +362,8 @@ describe "/divide" do
     visit "/divide"
 
     expect(page).to have_css("form[action]"),
-      "Expected page to have a form element with an 'action' attribute but didn't find one."
+                    "Expected page to have a form element with
+     an 'action' attribute but didn't find one."
   end
 end
 
@@ -355,14 +375,17 @@ describe "/divide" do
 
     if for_attribute.nil?
       expect(for_attribute).to_not be_empty,
-        "Expected label's for attribute to be set to a non empty value, was '#{for_attribute}' instead."
+                                   "Expected label's for attribute to be set
+      to a non empty value, was '#{for_attribute}' instead."
     else
       all_inputs = all("input")
 
       all_input_ids = all_inputs.map { |input| input[:id] }
 
       expect(all_input_ids.count(for_attribute)).to eq(1),
-        "Expected label's for attribute(#{for_attribute}) to match only 1 of the ids of an <input> tag (#{all_input_ids}), but found #{all_input_ids.count(for_attribute)}."
+                                                    "Expected label's for attribute(#{for_attribute})
+      to match only 1 of the ids of an <input> tag (#{all_input_ids})
+      , but found #{all_input_ids.count(for_attribute)}."
     end
   end
 end
@@ -377,7 +400,7 @@ describe "/add" do
     find("button", :text => /Add/i).click
 
     expect(page).to_not have_current_path("/add", ignore_query: true),
-      "Expected form to submit to a different Route, but didn't."
+                        "Expected form to submit to a different Route, but didn't."
   end
 end
 
@@ -391,7 +414,8 @@ describe "/add" do
     find("button", :text => /Add/i).click
 
     expect(page).to have_content(/5/),
-      "Expected results page of the form to display number from the first input (5), but didn't."
+                    "Expected results page of the form to display
+    number from the first input (5), but didn't."
   end
 end
 
@@ -419,7 +443,8 @@ describe "/add" do
     find("button", :text => /Add/i).click
 
     expect(page).to have_content(/69/),
-      "Expected results page of the form to display 69 (when inputs are 41.42 and 27.58), but didn't."
+                    "Expected results page of the form to display 69
+    (when inputs are 41.42 and 27.58), but didn't."
   end
 end
 # end add results
@@ -432,7 +457,7 @@ describe "/subtract" do
     find("button", :text => /Subtract/i).click
 
     expect(page).to_not have_current_path("/subtract", ignore_query: true),
-      "Expected form to submit to a different Route, but didn't."
+                        "Expected form to submit to a different Route, but didn't."
   end
 end
 
@@ -446,7 +471,8 @@ describe "/subtract" do
     find("button", :text => /Subtract/i).click
 
     expect(page).to have_content(/10/),
-      "Expected results page of the form to display number from the first input (10), but didn't."
+                    "Expected results page of the form to display number
+     from the first input (10), but didn't."
   end
 end
 
@@ -460,7 +486,8 @@ describe "/subtract" do
     find("button", :text => /Subtract/i).click
 
     expect(page).to have_content(11)
-    "Expected results page of the form to display number from the second input (11), but didn't."
+    "Expected results page of the form to display
+    number from the second input (11), but didn't."
   end
 end
 
@@ -474,7 +501,8 @@ describe "/subtract" do
     find("button", :text => /Subtract/i).click
 
     expect(page).to have_content(/41.5/),
-      "Expected results page of the form to display 42.5 when inputs are 69 and 27.5, but didn't."
+                    "Expected results page of the form to display 42.5
+    when inputs are 69 and 27.5, but didn't."
   end
 end
 # end sub results
@@ -487,7 +515,7 @@ describe "/multiply" do
     find("button", :text => /Multiply/i).click
 
     expect(page).to_not have_current_path("/multiply", ignore_query: true),
-      "Expected form to submit to a different Route, but didn't."
+                        "Expected form to submit to a different Route, but didn't."
   end
 end
 
@@ -501,7 +529,8 @@ describe "/multiply" do
     find("button", :text => /Multiply/i).click
 
     expect(page).to have_content(/3.5/),
-      "Expected results page of the form to display number from the first input (3.5), but didn't."
+                    "Expected results page of the form to display number
+    from the first input (3.5), but didn't."
   end
 end
 
@@ -529,7 +558,8 @@ describe "/multiply" do
     find("button", :text => /Multiply/i).click
 
     expect(page).to have_content(/1705/),
-      "Expected results page of the form to display the product of 1705 (when inputs are 62 and 27.5), but didn't."
+                    "Expected results page of the form to display the
+    product of 1705 (when inputs are 62 and 27.5), but didn't."
   end
 end
 # end multi results
@@ -542,7 +572,7 @@ describe "/divide" do
     find("button", :text => /Divide/i).click
 
     expect(page).to_not have_current_path("/divide", ignore_query: true),
-      "Expected form to submit to a different Route, but didn't."
+                        "Expected form to submit to a different Route, but didn't."
   end
 end
 
@@ -556,7 +586,8 @@ describe "/divide" do
     find("button", :text => /Divide/i).click
 
     expect(page).to have_content(/5.5/),
-      "Expected results page of the form to display number from the first input (5.5), but didn't."
+                    "Expected results page of the form to display number
+    from the first input (5.5), but didn't."
   end
 end
 
@@ -584,7 +615,7 @@ describe "/divide" do
     find("button", :text => /Divide/i).click
 
     expect(page).to have_content(/15.5/),
-      "Expected results page of the form to display the quotient of 15.5 (when inputs are 62 and 4), but didn't."
+                    "Expected results page of the form to display
+    the quotient of 15.5 (when inputs are 62 and 4), but didn't."
   end
 end
-
