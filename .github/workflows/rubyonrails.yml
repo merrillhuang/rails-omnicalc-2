@@ -38,7 +38,7 @@ jobs:
         run: bin/rails db:schema:load
       # Add or replace test runners here
       - name: Run tests
-        run: features/calc_spec.rb
+        run: /spec/features/calc_spec.rb
 
   lint:
     runs-on: ubuntu-latest
@@ -50,7 +50,7 @@ jobs:
         with:
           bundler-cache: true
       - name: Generate binstubs
-        run: bundle binstubs bundler-audit brakeman rubocop
+        run: bundle binstubs brakeman rubocop
       # Add or replace any other lints here
       - name: Security audit application code
         run: bin/brakeman -q -w2
